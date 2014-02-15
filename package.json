@@ -1,0 +1,53 @@
+{
+  "name": "bify-app",
+  "version": "0.0.0",
+  "description": "node-browserify starter app boilerplate",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test node test/",
+    "beefy": "node_modules/.bin/beefy lib/client/entry.coffee --open --live",
+    "build": "browserify lib/client/entry.coffee | uglifyjs -mc > public/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tphummel/node-bify-app.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "starter",
+    "quickstart",
+    "template",
+    "browserify"
+  ],
+  "author": {
+    "name": "Tom Hummel",
+    "email": "tphummel@gmail.com",
+    "url": "tomhummel.com"
+  },
+  "license": "MIT",
+  "bugs": "http://github.com/tphummel/node-bify-app/issues",
+  "homepage": "https://github.com/tphummel/node-bify-app",
+  "devDependencies": {
+    "tape": "~2.3.2"
+  },
+  "devDependencies": {
+    "jadeify": "~2.1.1",
+    "watchify": "~0.6.1",
+    "uglify-js": "~2.4.12",
+    "coffeeify": "~0.6.0",
+    "jade": "~1.1.5",
+    "browserify": "~3.30.0",
+    "sassify": "~0.1.2",
+    "beefy": "~1.1.0"
+  },
+  "browserify": {
+    "transform": [
+      "coffeeify",
+      "sassify",
+      "jadeify"
+    ]
+  }
+}
