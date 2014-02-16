@@ -8,7 +8,7 @@ var port = process.env.PORT || 7007;
 http.createServer(function(req, res){
   var reqUrl = url.parse(req.url);
 
-  console.log("request heard: ", reqUrl.pathname, new Date);
+  console.log("request heard: ", new Date, reqUrl.pathname);
 
   if(reqUrl.pathname === "/"){
     res.writeHead(200, {"Content-Type": "text/html"});
