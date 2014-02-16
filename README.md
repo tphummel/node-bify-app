@@ -1,10 +1,10 @@
 # node-bify-app
 
-[browserify](https://github.com/substack/node-browserify) client app starter. no server component other than for development. 
+[browserify](https://github.com/substack/node-browserify), bootstrap client app starter. no server component other than for development. 
 
 build static artifacts that can be served from static file server, s3, gh pages, etc. 
 
-consider [beefy](https://github.com/chrisdickinson/beefy) to get up and running with browserify quickly
+consider [beefy](https://github.com/chrisdickinson/beefy) to get up and running with browserify quickly.
 
 # start new project
 
