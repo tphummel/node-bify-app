@@ -1,18 +1,32 @@
-# {{app}}
+# node-bify-app
 
-[![Build Status](https://travis-ci.org/{{author}}/{{app}}.png)](https://travis-ci.org/{{author}}/{{app}})  
-[![NPM](https://nodei.co/npm/{{app}}.png?downloads=true)](https://nodei.co/npm/{{app}}/)
+[browserify](https://github.com/substack/node-browserify) client app starter. no server component other than for development. 
 
-# install
+build static artifacts that can be served from static file server, s3, gh pages, etc. 
 
-    npm install {{app}}
+consider [beefy](https://github.com/chrisdickinson/beefy) to get up and running with browserify quickly
 
-# test
+# start new project
 
-    npm test
+    git clone https://github.com/tphummel/node-bify-app.git new-app-dir
+    cd new-app-dir
+    rm -rf .git
+    git init
+    npm run dev
+    open http://localhost:7007
 
-# usage
+# deploy
 
-    var app = require("{{app}}");
-    
-    app();
+    rsync build/ some-remote-place    
+
+# project structure
+
+- `build/`: compiled js and markup
+- `dev/`: local dev server to serve js and markup
+- `lib/`: client app files. browserified into `build/main.js`
+- `views/`: static markup template(s). compiled to standalone markup in `/build`
+
+# possibilities
+
+- websocket client
+- json api cors client
