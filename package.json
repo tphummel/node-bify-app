@@ -8,8 +8,13 @@
   },
   "scripts": {
     "test": "NODE_ENV=test node test/",
-    "beefy": "node_modules/.bin/beefy lib/client/entry.coffee --open --live",
-    "build": "browserify lib/client/entry.coffee | uglifyjs -mc > public/main.js"
+    "dev-server": "supervisor -n exit -i build/ -e js,json dev/server.js",
+    "build-jade": "jade views/* -P -o build/",
+    "watch-jade": "jade views/* -P -w -o build/",
+    "build-js": "browserify lib/entry.coffee | uglifyjs -mc > build/main.js",
+    "watch-js": "watchify lib/entry.coffee -o build/main.js -dv",
+    "build": "npm run build-jade && npm run build-js",
+    "dev": "npm run watch-jade & npm run watch-js & npm run dev-server"
   },
   "repository": {
     "type": "git",
@@ -31,9 +36,6 @@
   "bugs": "http://github.com/tphummel/node-bify-app/issues",
   "homepage": "https://github.com/tphummel/node-bify-app",
   "devDependencies": {
-    "tape": "~2.3.2"
-  },
-  "devDependencies": {
     "jadeify": "~2.1.1",
     "watchify": "~0.6.1",
     "uglify-js": "~2.4.12",
@@ -41,7 +43,7 @@
     "jade": "~1.1.5",
     "browserify": "~3.30.0",
     "sassify": "~0.1.2",
-    "beefy": "~1.1.0"
+    "supervisor": "~0.5.6"
   },
   "browserify": {
     "transform": [
@@ -49,5 +51,8 @@
       "sassify",
       "jadeify"
     ]
+  },
+  "dependencies": {
+    "style-bootstrap": "0.0.2"
   }
 }
