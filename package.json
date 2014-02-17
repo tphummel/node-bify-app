@@ -43,7 +43,8 @@
     "jade": "~1.1.5",
     "browserify": "~3.30.0",
     "sassify": "~0.1.2",
-    "supervisor": "~0.5.6"
+    "supervisor": "~0.5.6",
+    "coffee-script": "~1.7.1"
   },
   "browserify": {
     "transform": [
