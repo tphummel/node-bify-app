@@ -30,3 +30,9 @@ consider [beefy](https://github.com/chrisdickinson/beefy) to get up and running 
 
 - websocket client
 - json api cors client
+
+# examples
+
+simple dashboard that pulls in and scrolls through starred github repos for a user
+
+[stargazer](https://github.com/tphummel/stargazer-client)
