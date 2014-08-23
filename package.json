@@ -11,8 +11,8 @@
     "dev-server": "supervisor -n exit -i build/ -e js,json dev/server.js",
     "build-jade": "jade views/* -P -o build/",
     "watch-jade": "jade views/* -P -w -o build/",
-    "build-js": "browserify lib/entry.coffee | uglifyjs -mc > build/main.js",
-    "watch-js": "watchify lib/entry.coffee -o build/main.js -dv",
+    "build-js": "browserify lib/client/entry.coffee | uglifyjs -mc > build/main.js",
+    "watch-js": "watchify lib/client/entry.coffee -o build/main.js -dv",
     "build": "npm run build-jade && npm run build-js",
     "dev": "npm run watch-jade & npm run watch-js & npm run dev-server"
   },
